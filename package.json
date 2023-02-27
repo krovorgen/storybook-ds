@@ -6,8 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
-    "build-storybooks": "build-storybook",
+    "build-storybook": "build-storybook",
     "serve-storybook": "serve storybook-static"
+  },
+  "engines": {
+    "node": ">=16.0.0 <17.0.0"
   },
   "keywords": [],
   "author": "",
