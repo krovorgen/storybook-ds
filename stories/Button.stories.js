@@ -1,48 +1,71 @@
 import { createButton } from './Button';
 
-// More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Example/Button',
-  // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
-    label: { control: 'text' },
+    label: { control: 'text', defaultValue: 'button', type: { name: 'string', required: false } },
     onClick: { action: 'onClick' },
-    primary: { control: 'boolean' },
     size: {
       control: { type: 'select' },
-      options: ['small', 'medium', 'large'],
+      defaultValue: 'md',
+      options: ['sm', 'md', 'lg', 'xl'],
+    },
+    mode: {
+      control: { type: 'select' },
+      options: [
+        'base',
+        'accent',
+        'outline-base',
+        'outline-accent',
+        'primary',
+        'alternative',
+        'secondary',
+        'ghost',
+      ],
     },
   },
 };
 
-// More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
 const Template = ({ label, ...args }) => {
-  // You can either use a function to create DOM elements or use a plain html string!
-  // return `<div>${label}</div>`;
   return createButton({ label, ...args });
 };
 
-export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/html/writing-stories/args
-Primary.args = {
-  primary: true,
-  label: 'Button',
+export const base = Template.bind({});
+base.args = {
+  mode: 'base',
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
+export const accent = Template.bind({});
+accent.args = {
+  mode: 'accent',
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
+export const outlineBase = Template.bind({});
+outlineBase.args = {
+  mode: 'outline-base',
 };
 
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
+export const outlineAccent = Template.bind({});
+outlineAccent.args = {
+  mode: 'outline-accent',
+};
+
+export const primary = Template.bind({});
+primary.args = {
+  mode: 'primary',
+};
+
+export const alternative = Template.bind({});
+alternative.args = {
+  mode: 'alternative',
+};
+
+export const secondary = Template.bind({});
+secondary.args = {
+  mode: 'secondary',
+};
+
+export const ghost = Template.bind({});
+ghost.args = {
+  mode: 'ghost',
 };

@@ -1,0 +1,101 @@
+html {
+  margin: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+body {
+  color: $dark;
+  background-color: $grey-50;
+
+  @media (max-width: $xl) {
+    padding-bottom: 57px;
+  }
+}
+
+input,
+textarea,
+select {
+  border-radius: 5px;
+
+  &::placeholder {
+    color: $grey-575;
+  }
+}
+
+input {
+  padding: 5px 8px;
+  width: 100%;
+  border: 1px solid $grey-250;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  padding: 0 10px;
+  max-width: 1248px;
+
+  &--content {
+    display: flex;
+
+    @media (max-width: $xl) {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.column {
+  width: 100%;
+
+  &--left {
+    width: 100%;
+
+    @media (min-width: $xl) {
+      margin-right: 20px;
+      min-width: 188px;
+      max-width: 188px;
+    }
+  }
+
+  &--right {
+    margin-left: 20px;
+    width: 100%;
+    max-width: 292px;
+
+    @media (max-width: $xl) {
+      margin-left: 0;
+      max-width: 100%;
+    }
+  }
+
+  &--jump-hater {
+    max-width: 708px;
+
+    @media (max-width: $xl) {
+      max-width: none;
+    }
+  }
+
+  &--overflow {
+    overflow: auto;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  white-space: nowrap;
+  clip: rect(0, 0, 0, 0);
+}
+
+// Задаётся отступ у банеров
+.mb20 {
+  margin-bottom: 20px;
+}

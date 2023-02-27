@@ -1,0 +1,50 @@
+@mixin white-box($padding: 26px 30px, $margin: 0 0 20px) {
+  margin: $margin;
+  padding: $padding;
+  border-radius: $border-radius-base;
+  background-color: $white;
+}
+
+@mixin md-white-box($padding: 16px 16px 24px) {
+  padding: $padding;
+  border-radius: $border-radius-base;
+  background-color: $white;
+}
+
+@mixin material-section-title {
+  margin-bottom: 20px;
+  font-weight: $font-weight-light;
+  font-size: 26px;
+  line-height: 1;
+}
+
+@mixin media($width) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin min-media($width) {
+  @media only screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+/* stylelint-disable */
+@mixin line-clamp($property) {
+  -webkit-line-clamp: $property;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
