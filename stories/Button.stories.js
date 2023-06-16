@@ -69,3 +69,8 @@ export const ghost = Template.bind({});
 ghost.args = {
   mode: 'ghost',
 };
+
+export const reject = Template.bind({});
+reject.args = {
+  mode: 'reject',
+};

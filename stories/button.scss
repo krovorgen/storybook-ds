@@ -3,7 +3,7 @@ $md-height: 40px;
 $lg-height: 50px;
 $xl-height: 60px;
 
-.button {
+.btn {
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
@@ -24,8 +24,6 @@ $xl-height: 60px;
 
   svg {
     margin-right: 8px;
-    height: 24px;
-    max-width: 24px;
   }
 
   &--sm {
@@ -73,19 +71,19 @@ $xl-height: 60px;
       margin: 0;
     }
 
-    &.button--sm {
+    &.btn--sm {
       width: $sm-height;
     }
 
-    &.button--md {
+    &.btn--md {
       width: $md-height;
     }
 
-    &.button--lg {
+    &.btn--lg {
       width: $lg-height;
     }
 
-    &.button--xl {
+    &.btn--xl {
       width: $xl-height;
     }
   }
@@ -99,13 +97,15 @@ $xl-height: 60px;
 
     &:hover {
       box-shadow: 0 3px 9px rgba(70, 131, 17, 0.5), inset 0 -2px 1px rgba(0, 0, 0, 0.28);
+      color: #fff;
     }
 
     &:active {
       box-shadow: inset 0 -2px 5px rgba(34, 34, 34, 0.3);
+      color: #fff;
     }
 
-    &.button--sm {
+    &.btn--sm {
       box-shadow: none;
 
       &:hover {
@@ -127,14 +127,16 @@ $xl-height: 60px;
 
     &:hover {
       box-shadow: 0 3px 9px rgba(191, 154, 0, 0.5), inset 0 -2px 1px rgba(0, 0, 0, 0.28);
+      color: #000;
     }
 
     &:active {
       box-shadow: inset 0 -2px 5px rgba(34, 34, 34, 0.18);
+      color: #000;
       background-image: linear-gradient(180deg, #f8d803 0%, #fc0 100%);
     }
 
-    &.button--sm {
+    &.btn--sm {
       box-shadow: none;
 
       &:hover {
@@ -144,12 +146,12 @@ $xl-height: 60px;
       &:active {
         box-shadow: inset 0 -2px 5px rgba(34, 34, 34, 0.2);
         background-image:
-          linear-gradient(
-            0deg,
-            rgba(255, 255, 255, 0.08),
-            rgba(255, 255, 255, 0.08)
-          ),
-          linear-gradient(180deg, #f8d803 0%, #fc0 100%);
+                linear-gradient(
+                                0deg,
+                                rgba(255, 255, 255, 0.08),
+                                rgba(255, 255, 255, 0.08)
+                ),
+                linear-gradient(180deg, #f8d803 0%, #fc0 100%);
       }
     }
   }
@@ -185,6 +187,7 @@ $xl-height: 60px;
     &:hover {
       border-color: #fc0;
       box-shadow: none;
+      color: #181818;
       background-image: linear-gradient(180deg, #ffde00 0%, #fc0 100%);
     }
 
@@ -218,11 +221,13 @@ $xl-height: 60px;
 
     &:hover {
       box-shadow: 0 0 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      color: #fff;
       background-color: #00ad42;
     }
 
     &:active {
       box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+      color: #fff;
       background-color: #009a36;
     }
   }
@@ -236,11 +241,13 @@ $xl-height: 60px;
 
     &:hover {
       box-shadow: 0 0 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      color: #292929;
       background-color: #f8c630;
     }
 
     &:active {
       box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+      color: #292929;
       background-color: #f7b110;
     }
   }
@@ -269,11 +276,49 @@ $xl-height: 60px;
 
     &:hover {
       box-shadow: 0 0 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      color: #424242;
       background-color: #f2f2f2;
     }
 
     &:active {
+      color: #424242;
       background-color: #dbdbdb;
     }
+  }
+
+  &--reject {
+    border-radius: 5px;
+    box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.28);
+    background-color: #ff3d00;
+
+    &:hover {
+      box-shadow: 0 3px 9px rgba(255, 61, 0, 0.5), inset 0 -2px 1px rgba(0, 0, 0, 0.28);
+      background-color: #ff3d00;
+    }
+
+    &:active {
+      box-shadow: inset 0 -2px 5px rgba(34, 34, 34, 0.3);
+      background-color: #ff3d00;
+    }
+  }
+
+  &.a-load-button {
+    text-decoration: none !important;
+    background-image:
+            linear-gradient(
+                            45deg,
+                            rgba(255, 255, 255, 0.3) 25%,
+                            transparent 25%,
+                            transparent 50%,
+                            rgba(255, 255, 255, 0.3) 50%,
+                            rgba(255, 255, 255, 0.3) 75%,
+                            transparent 75%,
+                            transparent
+            ) !important;
+    background-size: 40px 40px !important;
+    background-color: #99dd63 !important;
+    animation: progress-bar-stripes 2s linear infinite;
+    cursor: no-drop;
+    pointer-events: none;
   }
 }

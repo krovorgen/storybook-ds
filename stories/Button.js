@@ -6,7 +6,7 @@ export const createButton = ({ mode, size, label, onClick }) => {
   btn.innerText = label;
   btn.addEventListener('click', onClick);
 
-  btn.className = ['button', `button--${size}`, `button--${mode}`].join(' ');
+  btn.className = ['btn', `btn--${size}`, `btn--${mode}`].join(' ');
 
   return btn;
 };
